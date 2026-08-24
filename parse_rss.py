@@ -1,0 +1,44 @@
+import json
+import feedparser
+from datetime import datetime
+
+# 你可以把你的 RSS 源配置在这里，或者读取一个 opml/json 文件
+SOURCES = [
+    {"name": "BBC News", "url": "http://feeds.bbci.co.uk/news/rss.xml", "type": "news"},
+    {"name": "TechCrunch", "url": "https://techcrunch.com/feed/", "type": "news"},
+    {"name": "大纪元新闻", "url": "https://feed.epochtimes.com/feed", "type": "news"},
+    {"name": "TED Radio Hour", "url": "https://feeds.npr.org/510298/podcast.xml", "type": "podcast"}
+]
+
+all_items = []
+
+for source in SOURCES:
+    print(f"Fetching {source['name']}...")
+    try:
+        feed = feedparser.parse(source['url'])
+        for entry in feed.entries[:20]: # 每个源取前 20 条
+            pub_date = entry.get('published', '')
+            # 提取音频（播客）
+            audio_url = ""
+            if 'enclosures' in entry:
+                for enc in entry.enclosures:
+                    if 'audio' in enc.get('type', ''):
+                        audio_url = enc.get('href', '')
+            
+            all_items.append({
+                "title": entry.get('title', ''),
+                "link": entry.get('link', ''),
+                "description": entry.get('summary', '')[:200],
+                "pubDate": pub_date,
+                "audioUrl": audio_url,
+                "sourceName": source['name'],
+                "sourceType": source['type']
+            })
+    except Exception as e:
+        print(f"Error parsing {source['name']}: {e}")
+
+# 写入静态 JSON 文件
+with open('news.json', 'w', encoding='utf-8') as f:
+    json.dump(all_items, f, ensure_ascii=False, indent=2)
+
+print("Successfully generated news.json")
