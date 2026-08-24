@@ -4,8 +4,6 @@ from datetime import datetime
 
 # 你可以把你的 RSS 源配置在这里，或者读取一个 opml/json 文件
 SOURCES = [
-    {"name": "BBC News", "url": "http://feeds.bbci.co.uk/news/rss.xml", "type": "news"},
-    {"name": "TechCrunch", "url": "https://techcrunch.com/feed/", "type": "news"},
     {"name": "大纪元新闻", "url": "https://feed.epochtimes.com/feed", "type": "news"},
     {"name": "TED Radio Hour", "url": "https://feeds.npr.org/510298/podcast.xml", "type": "podcast"},
     {"name": "美国之音中文网", "url": "https://www.voachinese.com/api/zm_yql-vomx-tpeybti", "type": "news"}
