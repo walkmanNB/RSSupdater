@@ -8,7 +8,8 @@ SOURCES = [
     {"name": "TED Radio Hour", "url": "https://feeds.npr.org/510298/podcast.xml", "type": "podcast"},
     {"name": "美国之音中文网", "url": "https://www.voachinese.com/api/zm_yql-vomx-tpeybti", "type": "news"},
     {"name": "美国之音中文广播", "url": "https://www.voachinese.com/api/zviqoyl-vomx-tpeugiov", "type": "podcast"},
-    {"name": "无业游民", "url": "https://theue.me/feed/podcast?spm=5176.28158887.0.0.406dWzNLWzNLQr", "type": "podcast"}
+    {"name": "无业游民", "url": "https://theue.me/feed/podcast?spm=5176.28158887.0.0.406dWzNLWzNLQr", "type": "podcast"},
+    {"name": "少数派播客 SSPAI Podcast", "url": "https://sspai.typlog.io/feed/audio.xml?spm=5176.28158887.0.0.406dWzNLWzNLQr&file=audio.xml", "type": "podcast"}
 ]
 
 all_items = []
