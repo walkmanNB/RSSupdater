@@ -7,7 +7,8 @@ SOURCES = [
     {"name": "大纪元新闻", "url": "https://feed.epochtimes.com/gb/feed", "type": "news"},
     {"name": "TED Radio Hour", "url": "https://feeds.npr.org/510298/podcast.xml", "type": "podcast"},
     {"name": "美国之音中文网", "url": "https://www.voachinese.com/api/zm_yql-vomx-tpeybti", "type": "news"},
-    {"name": "美国之音中文广播", "url": "https://www.voachinese.com/api/zviqoyl-vomx-tpeugiov", "type": "podcast"}
+    {"name": "美国之音中文广播", "url": "https://www.voachinese.com/api/zviqoyl-vomx-tpeugiov", "type": "podcast"},
+    {"name": "无业游民", "url": "https://theue.me/feed/podcast?spm=5176.28158887.0.0.406dWzNLWzNLQr", "type": "news"},
 ]
 
 all_items = []
